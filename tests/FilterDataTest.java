@@ -25,7 +25,7 @@ public class FilterDataTest {
 
     @Test
     public void numberFilter() {
-        assertEquals(5, FilterData.numberFilter(exampleCourses, 592, 594).size());
+        assertEquals(9, FilterData.numberFilter(exampleCourses, 592, 594).size());
     }
 
     @Test
@@ -35,11 +35,11 @@ public class FilterDataTest {
 
     @Test
     public void averageGradeFilter() {
-        assertEquals(496, FilterData.averageGradeFilter(exampleCourses, 0.0, 2.99).size());
+        assertEquals(499, FilterData.averageGradeFilter(exampleCourses, 0.0, 2.99).size());
     }
 
     @Test
     public void titleFilter() {
-        assertEquals(3, FilterData.titleFilter(exampleCourses, "federal"));
+        assertEquals(3, FilterData.titleFilter(exampleCourses, "federal").size());
     }
 }

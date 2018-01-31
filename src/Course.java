@@ -1,5 +1,8 @@
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Course {
 
     /**
@@ -7,6 +10,32 @@ public class Course {
      */
     @SerializedName("CRN") private int crn;
     @SerializedName("Subject") private String subject;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return crn == course.crn &&
+                number == course.number &&
+                term == course.term &&
+                Double.compare(course.average, average) == 0 &&
+                Objects.equals(subject, course.subject) &&
+                Objects.equals(title, course.title) &&
+                Objects.equals(section, course.section) &&
+                Objects.equals(type, course.type) &&
+                Objects.equals(instructor, course.instructor) &&
+                Arrays.equals(grades, course.grades);
+    }
+
+    @Override
+    public int hashCode() {
+
+        int result = Objects.hash(crn, subject, number, title, section, type, term, instructor, average);
+        result = 31 * result + Arrays.hashCode(grades);
+        return result;
+    }
+
     @SerializedName("Number") private int number;
     @SerializedName("Title") private String title;
     @SerializedName("Section") private String section;

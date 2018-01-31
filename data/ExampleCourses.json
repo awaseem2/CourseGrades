@@ -1,0 +1,4 @@
+[
+  { "CRN": 41758, "Subject": "AAS", "Number": 100, "Title": "Intro Asian American Studies", "Section": "AD1", "Type": "DIS", "Term": 120138, "Instructor": "Arai, Sayuri", "Grades": [6, 16, 5, 3, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0], "Average": 3.72 },
+  { "CRN": 47100, "Subject": "AAS", "Number": 100, "Title": "Intro Asian American Studies", "Section": "AD2", "Type": "DIS", "Term": 120138, "Instructor": "Arai, Sayuri", "Grades": [6, 11, 4, 5, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0], "Average": 3.64 }
+]
