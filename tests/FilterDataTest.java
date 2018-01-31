@@ -25,18 +25,21 @@ public class FilterDataTest {
 
     @Test
     public void numberFilter() {
-        assertEquals(2, FilterData.numberFilter(exampleCourses, 592, 594).size());
+        assertEquals(5, FilterData.numberFilter(exampleCourses, 592, 594).size());
     }
 
     @Test
     public void classSizeFilter() {
+        assertEquals(2586, FilterData.classSizeFilter(exampleCourses, 0, 1000000).size());
     }
 
     @Test
     public void averageGradeFilter() {
+        assertEquals(496, FilterData.averageGradeFilter(exampleCourses, 0.0, 2.99).size());
     }
 
     @Test
     public void titleFilter() {
+        assertEquals(3, FilterData.titleFilter(exampleCourses, "federal"));
     }
 }
