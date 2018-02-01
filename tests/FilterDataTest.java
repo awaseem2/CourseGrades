@@ -16,13 +16,32 @@ public class FilterDataTest {
     @Test
     public void subjectFilter() {
         assertEquals(7, FilterData.subjectFilter(exampleCourses, "AAS").size());
+    }
 
+    @Test
+    public void invalidSubject(){
+        try {
+            assertEquals("", FilterData.subjectFilter(exampleCourses, null));
+        }
+        catch(IllegalArgumentException e){
+            e.getMessage();
+        }
     }
 
     @Test
     public void instructorFilter() {
         assertEquals(2, FilterData.instructorFilter(exampleCourses,
                 "Sayuri").size());
+    }
+
+    @Test
+    public void invalidInstructor(){
+        try {
+            assertEquals("", FilterData.instructorFilter(exampleCourses, null));
+        }
+        catch(IllegalArgumentException e){
+            e.getMessage();
+        }
     }
 
     @Test
@@ -46,5 +65,15 @@ public class FilterDataTest {
     @Test
     public void titleFilter() {
         assertEquals(3, FilterData.titleFilter(exampleCourses, "federal").size());
+    }
+
+    @Test
+    public void invalidTitle(){
+        try {
+            assertEquals("", FilterData.titleFilter(exampleCourses, null));
+        }
+        catch(IllegalArgumentException e){
+            e.getMessage();
+        }
     }
 }
