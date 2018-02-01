@@ -6,11 +6,14 @@ import static org.junit.Assert.*;
 
 public class CourseTest {
 
-    private String singleCourseData = "{ \"CRN\": 36552, \"Subject\": \"ACCY\", \"Number\": 202, \"Title\": \"Accounting and Accountancy II\", \"Section\": \"AD1\", \"Type\": \"DIS\", \"Term\": 120138, \"Instructor\": \"Le, Nga H\", \"Grades\": [1, 9, 6, 4, 10, 1, 3, 3, 3, 0, 1, 0, 1, 0], \"Average\": 3.02 }";
+    private String singleCourseData = "{ \"CRN\": 36552, \"Subject\": \"ACCY\", \"Number\": 202," +
+            "\"Title\": \"Accounting and Accountancy II\", \"Section\": \"AD1\", \"Type\": " +
+            "\"DIS\", \"Term\": 120138, \"Instructor\": \"Le, Nga H\", \"Grades\": " +
+            "[1, 9, 6, 4, 10, 1, 3, 3, 3, 0, 1, 0, 1, 0], \"Average\": 3.02 }";
     private Course courseExample = new Course();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         Gson gson = new Gson();
         courseExample = gson.fromJson(singleCourseData, Course.class);
     }
@@ -57,7 +60,8 @@ public class CourseTest {
 
     @Test
     public void getGrades() {
-        assertArrayEquals(new int[] {1, 9, 6, 4, 10, 1, 3, 3, 3, 0, 1, 0, 1, 0}, courseExample.getGrades());
+        assertArrayEquals(new int[] {1, 9, 6, 4, 10, 1, 3, 3, 3, 0, 1, 0, 1, 0},
+                courseExample.getGrades());
     }
 
     @Test

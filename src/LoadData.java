@@ -12,7 +12,8 @@ public class LoadData {
      */
     public static ArrayList<Course> fileToCourses(String fileName) {
         Gson gson = new Gson();
-        Course[] coursesArray = gson.fromJson(Data.getFileContentsAsString(fileName), Course[].class);
+        Course[] coursesArray = gson.fromJson(Data.getFileContentsAsString(fileName),
+                Course[].class);
         return new ArrayList<>(Arrays.asList(coursesArray));
     }
 

@@ -23,7 +23,8 @@ public class AggregateData {
      * @param secondGrade the final grade of the desired range.
      * @return an int of the total students that have a grade within that range in that Array List.
      */
-    public static int totalStudentsByGrade(ArrayList<Course> courses, String firstGrade, String secondGrade){
+    public static int totalStudentsByGrade(ArrayList<Course> courses,
+                                           String firstGrade, String secondGrade){
         int sum = 0;
         int firstIndex = gradeStringToIndex(firstGrade);
         int secondIndex = gradeStringToIndex(secondGrade);
@@ -47,7 +48,8 @@ public class AggregateData {
      * @return the index in the grades array.
      */
     public static int gradeStringToIndex(String grade){
-        String[] gradesArray = {"A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F", "W"};
+        String[] gradesArray = {"A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-",
+                "D+", "D", "D-", "F", "W"};
         return Arrays.asList(gradesArray).indexOf(grade.toUpperCase());
     }
 
@@ -64,6 +66,4 @@ public class AggregateData {
         double totalStudents = totalStudents(courses);
         return sum / totalStudents;
     }
-
-
 }
