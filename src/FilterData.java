@@ -10,6 +10,7 @@ public class FilterData {
      *         was passed in.
      */
     public static ArrayList<Course> subjectFilter(ArrayList<Course> courses, String subject){
+        throwExceptions(subject);
         ArrayList<Course> filtered = new ArrayList<>();
         for(Course currentCourse : courses){
             if(currentCourse.getSubject().equals(subject)){
@@ -27,6 +28,7 @@ public class FilterData {
      *         was passed in.
      */
     public static ArrayList<Course> instructorFilter(ArrayList<Course> courses, String instructor){
+        throwExceptions(instructor);
         ArrayList<Course> filtered = new ArrayList<>();
         for(Course currentCourse : courses){
             if(currentCourse.getInstructor().toLowerCase().contains(instructor.toLowerCase())){
@@ -46,6 +48,11 @@ public class FilterData {
      */
     public static ArrayList<Course> numberFilter(ArrayList<Course> courses, int low, int high){
         ArrayList<Course> filtered = new ArrayList<>();
+        if(low > high) {
+            int temp = low;
+            low = high;
+            high = temp;
+        }
         for(Course currentCourse : courses){
             if(currentCourse.getNumber() >= low && currentCourse.getNumber() <= high){
                 filtered.add(currentCourse);
@@ -64,6 +71,11 @@ public class FilterData {
      */
     public static ArrayList<Course> classSizeFilter(ArrayList<Course> courses, int low, int high){
         ArrayList<Course> filtered = new ArrayList<>();
+        if(low > high) {
+            int temp = low;
+            low = high;
+            high = temp;
+        }
         for(Course currentCourse : courses){
             if(currentCourse.getClassSize() >= low && currentCourse.getClassSize() <= high){
                 filtered.add(currentCourse);
@@ -82,6 +94,11 @@ public class FilterData {
      */
     public static ArrayList<Course> averageGradeFilter(ArrayList<Course> courses,
                                                        double low, double high){
+        if(low > high) {
+            double temp = low;
+            low = high;
+            high = temp;
+        }
         ArrayList<Course> filtered = new ArrayList<Course>();
         for(Course currentCourse : courses){
             if(currentCourse.getAverage() >= low && currentCourse.getAverage() <= high){
@@ -99,6 +116,7 @@ public class FilterData {
      *         was passed in.
      */
     public static ArrayList<Course> titleFilter(ArrayList<Course> courses, String title){
+        throwExceptions(title);
         ArrayList<Course> filtered = new ArrayList<Course>();
         for(Course currentCourse : courses){
             if(currentCourse.getTitle().toLowerCase().contains(title.toLowerCase())){
@@ -108,5 +126,10 @@ public class FilterData {
         return filtered;
     }
 
+    private static void throwExceptions(String inputString) {
+        if (inputString == null) {
+            throw new IllegalArgumentException(ErrorConstants.NULL_INPUT);
+        }
+    }
 
 }

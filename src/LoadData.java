@@ -27,7 +27,6 @@ public class LoadData {
         for(String currentFile : fileNames) {
             courses.addAll(fileToCourses(currentFile));
         }
-
         return courses;
     }
 }

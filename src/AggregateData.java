@@ -39,7 +39,6 @@ public class AggregateData {
             }
         }
         return sum;
-
     }
 
     /**
@@ -50,7 +49,11 @@ public class AggregateData {
     public static int gradeStringToIndex(String grade){
         String[] gradesArray = {"A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-",
                 "D+", "D", "D-", "F", "W"};
-        return Arrays.asList(gradesArray).indexOf(grade.toUpperCase());
+        int index = Arrays.asList(gradesArray).indexOf(grade.toUpperCase());
+        if (index == -1) {
+            throw new IllegalArgumentException(ErrorConstants.FALSE_GRADE);
+        }
+        return index;
     }
 
     /**
