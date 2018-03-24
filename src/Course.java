@@ -4,9 +4,6 @@ import java.util.Objects;
 
 public class Course {
 
-    /**
-     * Global variables.
-     */
     @SerializedName("CRN") private int crn;
     @SerializedName("Subject") private String subject;
     @SerializedName("Number") private int number;
@@ -17,31 +14,6 @@ public class Course {
     @SerializedName("Instructor") private String instructor;
     @SerializedName("Grades") private int[] grades;
     @SerializedName("Average") private double average;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Course course = (Course) o;
-        return crn == course.crn &&
-                number == course.number &&
-                term == course.term &&
-                Double.compare(course.average, average) == 0 &&
-                Objects.equals(subject, course.subject) &&
-                Objects.equals(title, course.title) &&
-                Objects.equals(section, course.section) &&
-                Objects.equals(type, course.type) &&
-                Objects.equals(instructor, course.instructor) &&
-                Arrays.equals(grades, course.grades);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(crn, subject, number, title, section,
-                type, term, instructor, average);
-        result = 31 * result + Arrays.hashCode(grades);
-        return result;
-    }
 
     public int getCrn() {
         return crn;
@@ -83,12 +55,44 @@ public class Course {
         return average;
     }
 
+    /**
+     * Sums up the total amount of people per class by counting the amount of grades there are.
+     *
+     * @return an int of the class size.
+     */
     public int getClassSize() {
         int sum = 0;
-        for(int i = 0; i < grades.length; i++){
+
+        for (int i = 0; i < grades.length; i++) {
             sum += grades[i];
         }
+
         return sum;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return crn == course.crn &&
+                number == course.number &&
+                term == course.term &&
+                Double.compare(course.average, average) == 0 &&
+                Objects.equals(subject, course.subject) &&
+                Objects.equals(title, course.title) &&
+                Objects.equals(section, course.section) &&
+                Objects.equals(type, course.type) &&
+                Objects.equals(instructor, course.instructor) &&
+                Arrays.equals(grades, course.grades);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(crn, subject, number, title, section,
+                type, term, instructor, average);
+        result = 31 * result + Arrays.hashCode(grades);
+        return result;
     }
 
 }
