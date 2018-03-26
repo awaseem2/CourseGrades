@@ -24,7 +24,6 @@ public class CourseTest {
             "\"Bankruptcy\", \"Section\": \"A\", \"Type\": \"LCD\", \"Term\": 120138, " +
             "\"Instructor\": \"Foohey, Pamela\", \"Grades\": " +
             "[1, 4, 12, 10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0], \"Average\": 3.44 }]";
-
     private Course singleCourse = new Course();
     private Course[] multipleCourses;
 

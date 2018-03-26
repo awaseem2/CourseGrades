@@ -1,0 +1,5 @@
+[
+  { "CRN": 57705, "Subject": "MACS", "Number": 100, "Title": "Intro to Popular TV & Movies", "Section": "A", "Type": "LEC", "Term": 120138, "Instructor": "Mobley, Alexandra M", "Grades": [155, 73, 59, 15, 16, 8, 2, 1, 0, 0, 1, 0, 0, 1], "Average": 3.8 },
+  { "CRN": 56301, "Subject": "MCB", "Number": 244, "Title": "Human Anatomy & Physiology I", "Section": "A", "Type": "LEC", "Term": 120138, "Instructor": "Brown, Chester M", "Grades": [36, 94, 20, 106, 155, 66, 138, 105, 53, 45, 28, 15, 8, 2], "Average": 2.65 },
+  { "CRN": 42926, "Subject": "RST", "Number": 255, "Title": "Ethical Issues in Sport Mgmt.", "Section": "A", "Type": "LCD", "Term": 120138, "Instructor": "Hardin, Donald R", "Grades": [1, 27, 0, 0, 21, 0, 0, 6, 0, 0, 0, 0, 0, 0], "Average": 3.4 }
+]
