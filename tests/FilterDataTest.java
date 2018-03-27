@@ -14,52 +14,48 @@ public class FilterDataTest {
     }
 
     @Test
-    public void validInputSubjectFilter() {
+    public void subjectFilterValidInput() {
         assertEquals(7, FilterData.subjectFilter(exampleCourses, "AAS").size());
     }
 
     @Test
-    public void nullInputSubjectFilter(){
+    public void subjectFilterNullInput() {
         try {
             FilterData.subjectFilter(exampleCourses, null);
-        }
-        catch(IllegalArgumentException e){
+        } catch(IllegalArgumentException e) {
             assertEquals(ErrorConstants.NULL_INPUT, e.getMessage());
         }
     }
 
     @Test
-    public void inputWithNumberSubjectFilter(){
+    public void subjectFilterInputWithNumber() {
         try {
             FilterData.subjectFilter(exampleCourses, "L4S");
-        }
-        catch(IllegalArgumentException e){
+        } catch(IllegalArgumentException e) {
             assertEquals(ErrorConstants.CONTAINS_DIGIT, e.getMessage());
         }
     }
 
     @Test
-    public void validInputInstructorFilter() {
+    public void instructorFilterValidInput() {
         assertEquals(2, FilterData.instructorFilter(exampleCourses,
                 "Sayuri").size());
     }
 
     @Test
-    public void nullInputInstructor(){
+    public void instructorFilterNullInput(){
         try {
             FilterData.instructorFilter(exampleCourses, null);
-        }
-        catch(IllegalArgumentException e){
+        } catch(IllegalArgumentException e) {
             assertEquals(ErrorConstants.NULL_INPUT, e.getMessage());
         }
     }
 
     @Test
-    public void inputWithNumberInstructorFilter(){
+    public void instructorFilterInputWithNumber(){
         try {
             FilterData.subjectFilter(exampleCourses, "Say6ri");
-        }
-        catch(IllegalArgumentException e){
+        }  catch(IllegalArgumentException e){
             assertEquals(ErrorConstants.CONTAINS_DIGIT, e.getMessage());
         }
     }
@@ -83,26 +79,24 @@ public class FilterDataTest {
     }
 
     @Test
-    public void outOfBoundsAverageGradeFilter() {
+    public void averageGradeFilterOutOfBoundsInput() {
         try {
             FilterData.averageGradeFilter(exampleCourses, 5.2, 3.1);
-        }
-        catch(IllegalArgumentException e){
+        }  catch(IllegalArgumentException e) {
             assertEquals(ErrorConstants.OUT_OF_BOUNDS_INPUT, e.getMessage());
         }
     }
 
     @Test
-    public void validInputTitleFilter() {
+    public void titleFilterValidInput() {
         assertEquals(3, FilterData.titleFilter(exampleCourses, "federal").size());
     }
 
     @Test
-    public void nullInputTitle(){
+    public void titleFilterNullInput(){
         try {
-            assertEquals("", FilterData.titleFilter(exampleCourses, null));
-        }
-        catch(IllegalArgumentException e){
+            FilterData.titleFilter(exampleCourses, null);
+        } catch(IllegalArgumentException e){
             assertEquals(ErrorConstants.NULL_INPUT, e.getMessage());
         }
     }
@@ -111,12 +105,9 @@ public class FilterDataTest {
     public void inputWithNumberTitleFilter(){
         try {
             FilterData.subjectFilter(exampleCourses, "f3deral");
-        }
-        catch(IllegalArgumentException e){
+        }  catch(IllegalArgumentException e) {
             assertEquals(ErrorConstants.CONTAINS_DIGIT, e.getMessage());
         }
     }
-
-
 }
 
