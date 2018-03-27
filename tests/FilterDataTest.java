@@ -2,7 +2,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-
 import static org.junit.Assert.*;
 
 public class FilterDataTest {
@@ -102,7 +101,7 @@ public class FilterDataTest {
     }
 
     @Test
-    public void inputWithNumberTitleFilter(){
+    public void titleFilterInputWithNumber(){
         try {
             FilterData.subjectFilter(exampleCourses, "f3deral");
         }  catch(IllegalArgumentException e) {

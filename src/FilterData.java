@@ -11,7 +11,8 @@ public class FilterData {
      *         was passed in.
      */
     public static ArrayList<Course> subjectFilter(ArrayList<Course> courses, String subject) {
-        handleErrors(subject);
+        handleStringErrors(subject);
+
         ArrayList<Course> filtered = new ArrayList<>();
         for (Course currentCourse : courses) {
             if (currentCourse.getSubject().equals(subject)) {
@@ -31,7 +32,8 @@ public class FilterData {
      *         was passed in.
      */
     public static ArrayList<Course> instructorFilter(ArrayList<Course> courses, String instructor) {
-        handleErrors(instructor);
+        handleStringErrors(instructor);
+
         ArrayList<Course> filtered = new ArrayList<>();
         for (Course currentCourse : courses) {
             if (currentCourse.getInstructor().toLowerCase().contains(instructor.toLowerCase())) {
@@ -138,7 +140,8 @@ public class FilterData {
      *         was passed in.
      */
     public static ArrayList<Course> titleFilter(ArrayList<Course> courses, String title) {
-        handleErrors(title);
+        handleStringErrors(title);
+
         ArrayList<Course> filtered = new ArrayList<>();
         for (Course currentCourse : courses) {
             if (currentCourse.getTitle().toLowerCase().contains(title.toLowerCase())) {
@@ -149,7 +152,7 @@ public class FilterData {
         return filtered;
     }
 
-    private static void handleErrors(String inputString) {
+    private static void handleStringErrors(String inputString) {
         if (inputString == null) {
             throw new IllegalArgumentException(ErrorConstants.NULL_INPUT);
         }
@@ -159,7 +162,6 @@ public class FilterData {
                 throw new IllegalArgumentException(ErrorConstants.CONTAINS_DIGIT);
             }
         }
-
     }
 }
 

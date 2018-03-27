@@ -1,6 +1,7 @@
-import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.google.gson.Gson;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class CourseTest {
     private String multipleCoursesData = "[{ \"CRN\": 32330, \"Subject\": \"GER\", \"Number\": " +
             "103, \"Title\": \"Intermediate German I\", \"Section\": \"D\", \"Type\": \"LCD\", " +
             "\"Term\": 120138, \"Instructor\": \"Grotovsky, Zachary P\", \"Grades\": " +
-            "[0, 6, 6, 4, 3, 0, 3, 0, 1, 0, 1, 0, 1, 0], \"Average]\": 3.12 }," +
+            "[0, 6, 6, 4, 3, 0, 3, 0, 1, 0, 1, 0, 1, 0], \"Average\": 3.12 }," +
             "{ \"CRN\": 34128, \"Subject\": \"HIST\", \"Number\": 171, \"Title\": " +
             "\"US Hist to 1877\", \"Section\": \"AD7\", \"Type\": \"DIS\", \"Term\": 120138, " +
             "\"Instructor\": \"Lehman, David B\", \"Grades\": " +

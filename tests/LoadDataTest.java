@@ -4,35 +4,39 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import static org.junit.Assert.*;
 
 public class LoadDataTest {
 
-    ArrayList<Course> singleJsonExample;
-    List<String> listOfJsonFiles = Arrays.asList("TwoExampleCourses.json",
+    ArrayList<Course> singleJsonCourses;
+    ArrayList<Course> multipleJsonsCourses;
+    List<String> multipleJsonFileNames = Arrays.asList("TwoExampleCourses.json",
             "ThreeExampleCourses.json");
-    ArrayList<Course> multipleJsonsExample;
 
     @Before
     public void setUp() {
-        singleJsonExample = LoadData.singleFileToCourses("TwoExampleCourses.json");
-        multipleJsonsExample = LoadData.multipleFilesToCourses(listOfJsonFiles);
+        singleJsonCourses = LoadData.singleFileToCourses("TwoExampleCourses.json");
+        multipleJsonsCourses = LoadData.multipleFilesToCourses(multipleJsonFileNames);
     }
 
     @Test
     public void singleFileToCourses() {
-        assertEquals(41758, singleJsonExample.get(0).getCrn());
-        assertEquals(47100, singleJsonExample.get(1).getCrn());
+        assertTrue(singleJsonCourses.size() == 2);
+
+        int[] courseCrns = {41758, 47100};
+        for (int i = 0; i < courseCrns.length; i++) {
+            assertEquals(courseCrns[i], singleJsonCourses.get(i).getCrn());
+        }
     }
 
     @Test
     public void multipleFilesToCourses() {
-        assertEquals(41758, multipleJsonsExample.get(0).getCrn());
-        assertEquals(47100, multipleJsonsExample.get(1).getCrn());
-        assertEquals(57705, multipleJsonsExample.get(2).getCrn());
-        assertEquals(56301, multipleJsonsExample.get(3).getCrn());
-        assertEquals(42926, multipleJsonsExample.get(4).getCrn());
+        assertTrue(multipleJsonsCourses.size() == 5);
+
+        int[] courseCrns = {41758, 47100, 57705, 56301, 42926};
+        for (int i = 0; i < courseCrns.length; i++) {
+            assertEquals(courseCrns[i], multipleJsonsCourses.get(i).getCrn());
+        }
     }
 }
 
